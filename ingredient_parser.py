@@ -81,7 +81,7 @@ PREP_WORDS = {
 
 NOTE_PATTERNS = [
     r"\bto taste\b", r"\boptional\b", r"\bfor (?:garnish|serving|dusting|greasing|frying|the pan)\b",
-    r"\bas needed\b", r"\bplus more(?: [a-z ]+)?\b", r"\bor more\b", r"\bdivided\b",
+    r"\bas needed\b", r"\bplus more(?: [a-z ]+)?\b", r"\b(?:or|and) more\b", r"\bdivided\b",
 ]
 
 _NUM = r"(?:\d+\s+\d+/\d+|\d+-\d+/\d+|\d+/\d+|\d*\.\d+|\d+)"
