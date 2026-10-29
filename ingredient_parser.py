@@ -242,7 +242,9 @@ def parse_ingredient(line):
     for pat in NOTE_PATTERNS:
         for nm in re.finditer(pat, text, flags=re.I):
             notes.append(nm.group(0).lower())
-        text = re.sub(r",?\s*" + pat, "", text, flags=re.I)
+        # Take a joining "or"/"and" with the note, so "salt, or to taste"
+        # doesn't leave "or" behind as prep.
+        text = re.sub(r",?\s*(?:\b(?:or|and)\s+)?" + pat, "", text, flags=re.I)
 
     # Prep after a comma: "onion, finely diced"
     prep_parts = []
